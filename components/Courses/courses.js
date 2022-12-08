@@ -7,7 +7,7 @@ temp.innerHTML = `
         </div>
         <div class="cont">
             <h3></h3>
-            <p class="pdet></p>
+            <p class="pdet"></p>
             <button class="regbtn">Register</button>
             <button class="detbtn">Show details...</button>
         </div>
@@ -26,7 +26,7 @@ class Course extends HTMLElement {
         img.src = this.getAttribute('imgsrc');
 
         const det = this.shadowRoot.querySelector('.pdet');
-        det.innerHTML = "This is a Full Course of " + this.getAttribute('title')
+        det.innerHTML = "This is a Full Course of " + this.getAttribute('title');
 
         const tit = this.shadowRoot.querySelector('.cont h3');
         tit.innerHTML = this.getAttribute('title')
@@ -36,10 +36,13 @@ class Course extends HTMLElement {
         regbtn.addEventListener('click', () => {
             alert("Regestered .")
         })
-
+        let b = true;
         const detbtn = this.shadowRoot.querySelector('.detbtn');
         detbtn.addEventListener('click', () => {
             det.classList.toggle("pdet");
+            // b: detbtn.value = "df";
+            detbtn.innerHTML = b ? "Hide Detailes..." : "Show details...";
+            b = !b;
             // console.log("Display");
         })
 
