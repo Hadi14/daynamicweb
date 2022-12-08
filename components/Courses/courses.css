@@ -21,3 +21,7 @@
 .cont {
     margin: 0 10px;
 }
+
+.pdet {
+    display: none;
+}
